@@ -252,6 +252,7 @@ img {
 /* -----------------EXAMPLES---------------- */
 
 .examples {
+    display:none;
     padding-bottom: 120px;
 }
 
@@ -364,8 +365,8 @@ img {
 /* -----------------CUSTOMERS---------------- */
 
 .customers {
-padding-top: 120px;
-padding-bottom: 120px;
+padding-top: 96px;
+padding-bottom: 96px;
 }
 
 .customers-title {
@@ -381,12 +382,14 @@ padding-bottom: 120px;
 .customers-list {
     box-sizing: border-box;
     display: flex;
-    gap: 24px;
-
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 16px;
+    row-gap: 72px;
 }
 
 .customers-item  {
-    width: calc((100% - 120px) / 6);
+    width: calc((100% - 16px) / 2);
     height: 88px;
 }
 
@@ -416,18 +419,14 @@ padding-bottom: 120px;
 
 .footer {
     background-color: var(--secondary-color);
-    padding-top: 100px;
-    padding-bottom: 100px;
-}
-
-.footer-wrap {
-    display: flex;
-    align-items: baseline;
+    padding-top: 96px;
+    padding-bottom: 96px;
 }
 
 .footer-cont-text {
-    width: 264px;
-    margin-right: 120px;
+    width: 268px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .footer-logo {
@@ -438,7 +437,7 @@ padding-bottom: 120px;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: var(--soc-icon-bcg);
-    display: inline-block;
+    display: block;
     margin-bottom: 16px;
 }
 
@@ -451,8 +450,13 @@ padding-bottom: 120px;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
+    text-align: left;
     color: var(--bcg-light);
     width: 100%;
+}
+
+.footer-soc {
+    margin-top: 72px;
 }
 
 .footer-soc-sub-text {
@@ -460,13 +464,16 @@ font-weight: 500;
 font-size: 16px;
 line-height: 1.5;
 letter-spacing: 0.02em;
+text-align: center;
 color: var(--main-bcg-color);
 margin-bottom: 16px;
 }
 
 .footer-soc-list {
-display: flex;
-gap: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 72px;
 }
 
 .footer-soc-item {
@@ -494,17 +501,16 @@ gap: 16px;
     fill: var(--bcg-light);
 }
 
-.footer-subscribe {
-    margin-left: 80px;
-}
-
-.subsribe-form {
+.subscribe-form {
     display: flex;
-    gap: 24px;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 16px;
 }
 
 .footer-input {
-    width: 264px;
+    box-sizing: border-box;
+    width: 398px;
     height: 40px;
     font-weight: 400;
     font-size: 12px;
@@ -525,7 +531,7 @@ gap: 16px;
 }
 
 .submit-btn {
-    min-width: 165px;
+    width: 165px;
     height: 40px;
     cursor: pointer;
     display: flex;
@@ -927,6 +933,57 @@ gap: 16px;
     .advantages-item:not(:last-child) {
         margin-bottom: 0px;
     }
+
+    .customers {
+        max-width: 582px;
+        margin: 0 auto;
+    }
+
+    .customers-list {
+        column-gap: 24px;
+    }
+
+    .customers-item {
+        max-width: calc((100% - 48px) / 3);
+    }
+
+    .footer-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 72px;
+    }
+
+    .footer-cont-text {
+        width: 264px;
+        margin:0 24px 0 108px;
+        text-align: left;
+    }
+
+    .footer-soc {
+        margin-top: 0px;
+    }
+
+    .footer-soc-sub-text {
+        text-align: left;
+    }
+
+    .footer-soc-list {
+        margin-bottom: 0;
+    }
+
+    .footer-subscribe {
+        display: block;
+        margin-left: 108px;
+    }
+
+    .footer-input {
+        width: 264px;
+    }
+
+    .subscribe-form {
+        flex-direction: row;
+        gap: 24px;
+    }
 }
 
 @media screen and (min-width: 1158px) {
@@ -991,5 +1048,39 @@ gap: 16px;
 
     .advantages-text {
         font-weight: 400;
+    }
+
+    .examples {
+        display: block;
+    }
+
+    .customers {
+        padding-top: 120px;
+        max-width: 1158px;
+        padding-bottom: 120px;
+    }
+
+    .customers-item {
+        width: calc((100% - 120px) / 6);
+        height: 88px;
+    }
+
+    .footer-wrap {
+        flex-wrap: nowrap;
+        align-items: baseline;
+        row-gap: 0;
+    }
+
+    .footer-cont-text {
+        width: 264px;
+        margin: 0 120px 0 0;
+    }
+
+    .footer-logo {
+        display: inline-block;
+    }
+
+    .footer-subscribe {
+        margin-left: 80px;
     }
 }
